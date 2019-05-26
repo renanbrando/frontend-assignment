@@ -1,70 +1,51 @@
 import Data from '../views/Data.vue';
-import Page from '../views/Data.vue';
+import Page from '../views/Page.vue';
 import Table from '../views/Table.vue';
-import Toolbar from '../components/Toolbar.vue';
-import Breadcrumb from '../components/Breadcrumb.vue';
-import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
+import NotFound from '../views/NotFound.vue';
 
 export const routes = [
-    { 
-      path: '', 
-      components: {
-        default: Data,
-        'toolbar': Toolbar,
-        'breadcrumb': Breadcrumb,
-        'navbar': Navbar,
-        'footer': Footer
-      },
-      meta: {
-        requiresAuth: false
-      }
+    {
+        path: "/",
+        redirect: '/data'
     },
-    { 
-      path: '/data', 
-      components: {
-        default: Data,
-        'toolbar': Toolbar,
-        'navbar': Navbar,
-        'footer': Footer
-      },
-      meta: {
-        requiresAuth: false
-      }
-    },
-    { 
-      path: '/page', 
-      components: {
-        default: Page,
-        'toolbar': Toolbar,
-        'footer': Footer
-      },
-      meta: {
-        requiresAuth: false
-      } 
-    },
-    { 
-        path: '/table', 
-        components: {
-          default: Table,
-          'toolbar': Toolbar,
-          'footer': Footer
-        },
+    {
+        path: '/data',
+        name: 'data',
+        component: Data,
         meta: {
-          requiresAuth: false
-        } 
-      },
-    { 
-      path: '*', 
-      components: {
-        default: Data,
-        'toolbar': Toolbar,
-        'navbar': Navbar,
-        'footer': Footer
-      },
-      meta: {
-        requiresAuth: false
-      }
+            requiresAuth: false,
+            title: 'Company Data'
+        }
+    },
+    {
+        path: '/page',
+        name: 'page',
+        component: Page,
+        meta: {
+            requiresAuth: false,
+            title: 'Company Page'
+        }
+    },
+    {
+        path: '/table',
+        name: 'table',
+        component: Table,
+        meta: {
+            requiresAuth: false,
+            title: 'Company Table'
+        }
+    },
+    {
+        path: '/not-found',
+        name: 'not-found',
+        component: NotFound,
+        meta: {
+            requiresAuth: false,
+            title: 'Not Found'
+        }
+    },
+    {
+        path: '*',
+        redirect: '/not-found'
     }
-  
-  ]
+]

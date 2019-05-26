@@ -1,3 +1,77 @@
+@import './variables.scss';
+
 body {
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content {
+    flex: 4;
+    margin: 0px 16px;
+    border: 1px solid $divider-color;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.sidemenu {
+    flex: 1;
+}
+
+// custom components
+.form-control {
+    margin: 32px 0px;
+}
+
+label {
+    color: $secondary-text-color;
+}
+
+input {
+    display: block;
+    margin: 4px 0px;
+    padding: 0px 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: 2px 0px 15px rgba(68, 68, 68, 0.247);
+    border: 1px solid $divider-color;
+    height: 40px;
+    width: 80%;
+
+    &::placeholder {
+        color: $divider-color;
+    }
+}
+
+textarea {
+    display: block;
+    margin: 4px 0px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: 2px 0px 15px rgba(68, 68, 68, 0.247);
+    border: 1px solid $divider-color;
+    height: 150px;
+    width: 80%;
+
+    &::placeholder {
+        color: $divider-color;
+    }
+}
+
+button {
+    background-color: $primary;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

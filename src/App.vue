@@ -1,20 +1,12 @@
 <template>
-    <div>
-        <router-view name="toolbar">
-            <Toolbar/>
-        </router-view>
-         <router-view name="breadcrumb">
-            <Breadcrumb/>
-        </router-view>
-        <div class="content">
-            <router-view name="navbar">
-                <Navbar/>
-            </router-view>
+    <div class="container">
+        <Toolbar/>
+        <Breadcrumb/>
+        <div class="page">
+            <Navbar/>
             <router-view></router-view>
         </div>
-        <router-view name="footer">
-            <Footer/>
-        </router-view>
+        <Footer/>
     </div>
 </template>
 
@@ -36,11 +28,12 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 
 .content{
     display: flex;
+    flex-direction: column;
+    min-height: 70vh;
 }
 
 </style>

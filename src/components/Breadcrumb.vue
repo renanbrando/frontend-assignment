@@ -1,44 +1,51 @@
 <template>
-    <ul class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Data</a></li>
-    </ul>
+    <div class="page">
+        <ul class="breadcrumb">
+            <li><router-link tag="a" :to="{name: 'data'}">Home</router-link></li>
+            <li><router-link tag="a" :to="{name: current}">{{current}}</router-link></li>
+        </ul>
+    </div>
 </template>
 
 <script>
 export default {
-    name: "Breadcrumb"
+    name: "Breadcrumb",
+    computed: {
+        current(){
+            return this.$route.meta.title;
+        }
+    }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss"scoped>
 
-ul.breadcrumb {
-  margin: 0px;
-  padding: 10px 16px;
-  list-style: none;
-  background-color: #eee;
-}
+@import '../styles/variables.scss';
 
-ul.breadcrumb li {
-  display: inline;
-  font-size: 18px;
-}
+.breadcrumb {
+    margin: 8px 0px;
+    padding: 10px 0px;
+    list-style: none;
 
-ul.breadcrumb li+li:before {
-  padding: 8px;
-  color: black;
-  content: "/\00a0";
-}
+    li {
+        display: inline;
+        font-size: 18px;
 
-ul.breadcrumb li a {
-  color: #0275d8;
-  text-decoration: none;
-}
+        a {
+            color: $secondary-text-color;
+            text-decoration: none;
 
-ul.breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline;
+            &:hover {
+                color: $primary-dark;
+            }
+        }
+
+        &+li:before {
+            padding: 8px;
+            color: $secondary-text-color;
+            content: "/\00a0";
+        }
+    }
 }
 
 </style>
