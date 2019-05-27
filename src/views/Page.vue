@@ -111,26 +111,27 @@ export default {
     }
 }
 
-ul, li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-img {
-  width: 100%;
-}
-h2 {
-  margin-top: 0;
-  margin-bottom: 0.4em;
-}
-
 .companies {
+
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0.4em;
+    }
+
     .list {
         display: flex;
         flex-wrap: wrap;
     }
+
     .list-item {
-        display: flex; 
+        display: flex;
         margin: 16px auto;
         border: 1px solid $divider-color;
         border-radius: 4px;
@@ -139,16 +140,19 @@ h2 {
         color: $primary;
         cursor: pointer;
     }
+
     @media all and (min-width: 20em) {
         .list-item {
             width: 25%;
         }
     }
+
     @media all and (min-width: 40em) {
         .list-item {
             width: 20%;
         }
     }
+
     .list-content {
         background-color: #fff;
         display: flex;
@@ -164,6 +168,7 @@ h2 {
             text-align: center;
         }
     }
+
     .list-content p {
         flex: 1 0 auto;
     }

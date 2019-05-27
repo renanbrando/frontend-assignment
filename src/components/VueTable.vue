@@ -85,7 +85,7 @@ table {
     border-collapse: collapse;
 
     th {
-        background-color: $primary-light;
+        background-color: $primary;
         color: $primary-color-text;
         cursor: pointer;
         user-select: none;

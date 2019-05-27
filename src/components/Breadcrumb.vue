@@ -2,7 +2,7 @@
     <div class="page">
         <ul class="breadcrumb">
             <li><router-link tag="a" :to="{name: 'data'}">Home</router-link></li>
-            <li><router-link tag="a" :to="{name: current}">{{current}}</router-link></li>
+            <li><router-link tag="a" :to="{name: current.name}">{{current.title}}</router-link></li>
         </ul>
     </div>
 </template>
@@ -12,7 +12,10 @@ export default {
     name: "Breadcrumb",
     computed: {
         current(){
-            return this.$route.meta.title;
+            return {
+                title: this.$route.meta.title,
+                name: this.$route.name
+            };
         }
     }
 }
