@@ -5,19 +5,60 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
-      sample: {}
+      companies: [
+        {
+            logo: 'microsoft',
+            name: 'Microsot',
+            address: 'Redmond, WA USA'
+        },
+        {
+            logo: 'apple',
+            name: 'Apple',
+            address: 'Cupertino, CA USA'
+        },
+        {
+            logo: 'amazon',
+            name: 'Amazon',
+            address: 'Moreno Valley, CA USA'
+        },
+        {
+            logo: 'adobe',
+            name: 'Adobe',
+            address: 'San Jose, CA USA'
+        },
+        {
+            logo: 'google',
+            name: 'Google',
+            address: 'Mountain View, CA USA'
+        },
+        {
+            logo: 'atlassian',
+            name: 'Atlassian',
+            address: 'Redmond, WA USA'
+        },
+        {
+            logo: 'dropbox',
+            name: 'Dropbox',
+            address: 'San Francisco, CA USA'
+        },
+        {
+            logo: 'facebook',
+            name: 'Facebook',
+            address: 'Menlo Park, CA USA'
+        }
+      ]
     },
     mutations: {
-        add(state, value) {
-            state.sample = value;
+        add(state, company) {
+            state.companies.push(company);
         }
     },
     actions: {
-        authenticate(state){
+        addAsync(state){
             state.commit('add');
         }
     },
     getters: {
-        sample: state => state.sample
+        companies: state => state.companies
     }
 })

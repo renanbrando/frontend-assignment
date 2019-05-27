@@ -34,14 +34,16 @@ label {
 
 input {
     display: block;
-    margin: 4px 0px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     padding: 0px 8px;
     font-size: 16px;
     border-radius: 4px;
+    box-sizing: border-box;
     box-shadow: 2px 0px 15px rgba(68, 68, 68, 0.247);
     border: 1px solid $divider-color;
     height: 40px;
-    width: 80%;
+    width: 50%;
 
     &::placeholder {
         color: $divider-color;
